@@ -1,9 +1,11 @@
+#coding=utf-8
 import matplotlib.pyplot as plt
 from cnn import *
 from data_utils import get_CIFAR10_data
 from solver import Solver
 
 data = get_CIFAR10_data()
+#构造三层卷积网络
 model = ThreeLayerConvNet(reg=0.9)
 solver = Solver(model, data,                
                 lr_decay=0.95,                

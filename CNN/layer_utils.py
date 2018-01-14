@@ -74,8 +74,11 @@ def conv_relu_pool_forward(x, w, b, conv_param, pool_param):
   - out: Output from the pooling layer
   - cache: Object to give to the backward pass
   """
+  #conv_cache = (x, w, b, conv_param)
   a, conv_cache = conv_forward_naive(x, w, b, conv_param)
+  #relu_cache=a
   s, relu_cache = relu_forward(a)
+  # pool_cache=(s, pool_param)
   out, pool_cache = max_pool_forward_naive(s, pool_param)
   cache = (conv_cache, relu_cache, pool_cache)
   return out, cache

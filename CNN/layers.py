@@ -1,3 +1,4 @@
+#coding=utf-8
 import numpy as np
 
 def affine_forward(x, w, b):   
@@ -131,9 +132,11 @@ def conv_forward_naive(x, w, b, conv_param):
     N, C, H, W = x.shape
     F, C, HH, WW = w.shape
     x_padded = np.pad(x, ((0, 0), (0, 0), (pad, pad), (pad, pad)), mode='constant')
+    #计算卷积后图像矩阵的大小
     H_new = 1 + (H + 2 * pad - HH) / stride
     W_new = 1 + (W + 2 * pad - WW) / stride
     s = stride
+    #存放卷积后的结果
     out = np.zeros((N, F, H_new, W_new))
 
     for i in xrange(N):       # ith image    

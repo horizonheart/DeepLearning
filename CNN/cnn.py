@@ -1,3 +1,4 @@
+#coding=utf-8
 from layer_utils import *
 
 class ThreeLayerConvNet(object):    
